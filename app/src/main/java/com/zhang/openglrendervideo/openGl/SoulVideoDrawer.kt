@@ -73,7 +73,7 @@ class SoulVideoDrawer():IDrawer{
     //是否更新FBO纹理
     private  var mDrawFbo: Int=-1
     //更新fbo标记接收者
-    private  var mDrawFboHandler:Int=-1
+    private  var mDrawFobHandler:Int=-1
 
     //一帧灵魂的时间
     private  var mModifyTime:Long=-1
@@ -278,6 +278,10 @@ class SoulVideoDrawer():IDrawer{
                mVertexPosHandler=GLES20.glGetAttribLocation(mProgram,"aPosition")
                mTexturePosHandler=GLES20.glGetAttribLocation(mProgram,"aCoordinate")
                mTextureHandler=GLES20.glGetUniformLocation(mProgram,"uTexture")
+
+               mSoulTextureHandler = GLES20.glGetUniformLocation(mProgram, "uSoulTexture")
+               mProgressHandler = GLES20.glGetUniformLocation(mProgram, "progress")
+               mDrawFobHandler = GLES20.glGetUniformLocation(mProgram, "drawFbo")
            }
        GLES20.glUseProgram(mProgram)
     }
@@ -302,7 +306,7 @@ class SoulVideoDrawer():IDrawer{
         GLES20.glUniformMatrix4fv(mVertexMatrixHandler,1,false,mMatrix,0)
         //设置参数 第二各参数代表每个顶点包含的参数数量
         GLES20.glUniform1f(mProgressHandler,(System.currentTimeMillis()-mModifyTime)/500f)
-        GLES20.glUniform1i(mDrawFboHandler,mDrawFbo)
+        GLES20.glUniform1i(mDrawFobHandler,mDrawFbo)
          GLES20.glVertexAttribPointer(mVertexPosHandler,2,GLES20.GL_FLOAT,false,0,mVertexBuffer)
          GLES20.glVertexAttribPointer(mTexturePosHandler,2,GLES20.GL_FLOAT,false,0,mTextureBuffer)
           GLES20.glVertexAttrib1f(mAlphaHandler,mAlpha)
