@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         button6.setOnClickListener {
             startActivity(Intent(this, EGLPlayerActivity::class.java))
         }
+        button7.setOnClickListener {
+            startActivity(Intent(this, SoulPlayerActivity::class.java))
+        }
 
     }
     override fun onRequestPermissionsResult(

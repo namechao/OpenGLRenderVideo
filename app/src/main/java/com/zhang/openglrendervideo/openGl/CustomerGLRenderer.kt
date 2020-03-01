@@ -174,7 +174,7 @@ class CustomerGLRenderer :SurfaceHolder.Callback{
         }
 
         private fun generateTextureID() {
-          val textureId=OpengGlTools.creatTextureId(mDrawers.size)
+          val textureId=OpenGlTools.creatTextureId(mDrawers.size)
             for ((idx,drawer) in mDrawers.withIndex()){
                 drawer.setTextureId(textureId[idx])
             }

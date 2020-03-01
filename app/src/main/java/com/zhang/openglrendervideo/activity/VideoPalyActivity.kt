@@ -15,7 +15,7 @@ class VideoPalyActivity : AppCompatActivity() {
     lateinit var threaPool: ExecutorService
     lateinit var videoDecoder: VideoDecoder
     lateinit var audioDecoder: AudioDecoder
-    val path = Environment.getExternalStorageDirectory().absolutePath + "/MV.mp4"
+    val path = Environment.getExternalStorageDirectory().absolutePath + "/mvtest.mp4"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_paly)

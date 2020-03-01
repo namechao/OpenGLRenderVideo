@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.EGLPlayerActivity"></activity>
+        <activity android:name=".activity.SoulPlayerActivity"></activity>
+        <activity android:name=".activity.EGLPlayerActivity" />
         <activity android:name=".activity.MultiOpenGLPlayerActivity" />
         <activity android:name=".activity.VideoRenderActivity" />
         <activity android:name=".activity.BitmapRenderActivity" />

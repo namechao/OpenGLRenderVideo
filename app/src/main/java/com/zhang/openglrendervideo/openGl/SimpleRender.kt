@@ -24,7 +24,7 @@ class SimpleRender() :GLSurfaceView.Renderer{
         GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA)
         GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA)
 
-        val textureIds = OpengGlTools.creatTextureId(drawers.size)
+        val textureIds = OpenGlTools.creatTextureId(drawers.size)
         for ((idx, drawer) in drawers.withIndex()) {
             drawer.setTextureId(textureIds[idx])
         }

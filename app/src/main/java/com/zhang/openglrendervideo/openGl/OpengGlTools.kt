@@ -12,13 +12,13 @@ import javax.microedition.khronos.opengles.GL
  * @LastEditTime: 2020-01-08 17:15:49
  * @Deprecated: false
  */
-object OpengGlTools {
+object OpenGlTools {
    fun creatTextureId(count:Int):IntArray{
    var texture=IntArray(count)
     GLES20.glGenTextures(count,texture,0)
        return texture
    }
-    fun createFBOTexture(width: Int,height:Int):IntArray{
+    fun createFBOTexture(width: Int,height:Int):Int{
         //新建fbo纹理id
         val textures=IntArray(1)
         GLES20.glGenTextures(1,textures,0)
@@ -36,7 +36,7 @@ object OpengGlTools {
         GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,GLES20.GL_TEXTURE_WRAP_T,GLES20.GL_CLAMP_TO_EDGE.toFloat())
         //解绑纹理ID
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,0)
-        return textures
+        return textures[0]
     }
     //创建帧buffer
     fun  createFramBuffer():Int{
@@ -52,6 +52,7 @@ object OpengGlTools {
     }
 
     fun unbindFBO(){
+        GLES20.glBindRenderbuffer(GLES20.GL_RENDERBUFFER,GLES20.GL_NONE)
         GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER,GLES20.GL_NONE)
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,0)
     }
@@ -59,6 +60,7 @@ object OpengGlTools {
     fun deleteFBO(frame:IntArray,texture:IntArray){
         //删除Frame Buffer
         GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER,GLES20.GL_NONE)
+        GLES20.glBindRenderbuffer(GLES20.GL_RENDERBUFFER, GLES20.GL_NONE)
         GLES20.glDeleteFramebuffers(1,frame,0)
         //删除纹理
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,0)

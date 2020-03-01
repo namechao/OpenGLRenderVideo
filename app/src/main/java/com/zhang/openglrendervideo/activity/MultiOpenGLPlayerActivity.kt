@@ -21,7 +21,7 @@ import java.util.concurrent.Executors
 
 class MultiOpenGLPlayerActivity : AppCompatActivity() {
     private lateinit var drawer: IDrawer
-    val path = Environment.getExternalStorageDirectory().absolutePath + "/MV.mp4"
+    val path = Environment.getExternalStorageDirectory().absolutePath + "/mvtest.mp4"
     val path1 = Environment.getExternalStorageDirectory().absolutePath + "/mvtest_2.mp4"
     var threadPool = Executors.newFixedThreadPool(10)
     private var render=SimpleRender()

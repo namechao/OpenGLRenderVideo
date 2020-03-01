@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_eglplayer.*
 import java.util.concurrent.Executors
 
 class EGLPlayerActivity : AppCompatActivity() {
-    val path = Environment.getExternalStorageDirectory().absolutePath + "/MV.mp4"
+    val path = Environment.getExternalStorageDirectory().absolutePath + "/mvtest.mp4"
     val path2 = Environment.getExternalStorageDirectory().absolutePath + "/mvtest_2.mp4"
 
     private val threadPool = Executors.newFixedThreadPool(10)
